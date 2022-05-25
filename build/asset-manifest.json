@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/static/css/main.83033d60.css",
+    "main.js": "/static/js/main.c5593934.js",
+    "static/media/brotherhood.png": "/static/media/brotherhood.c92e1293f98eff6e678d.png",
+    "static/media/logo.png": "/static/media/logo.c92e1293f98eff6e678d.png",
+    "static/media/membership.jpg": "/static/media/membership.2da8aa112ff0a218c875.jpg",
+    "static/media/shaheen.jpg": "/static/media/shaheen.f5efbc25a2a486926691.jpg",
+    "index.html": "/index.html",
+    "main.83033d60.css.map": "/static/css/main.83033d60.css.map",
+    "main.c5593934.js.map": "/static/js/main.c5593934.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.83033d60.css",
+    "static/js/main.c5593934.js"
+  ]
+}
