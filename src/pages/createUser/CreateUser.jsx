@@ -17,6 +17,7 @@ export default function User() {
   const [bsgCard, setBsgCard] = useState("");
   const [cnic, setCnic] = useState("");
   const [district, setDistrict] = useState("");
+  const [genderRadio, setGenderRadio] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
@@ -48,6 +49,7 @@ export default function User() {
             father_name: fatherName,
             user_email: email,
             user_district: district,
+            user_gender: genderRadio,
             BSG_card_number: bsgCard,
             user_cnic: cnic,
             user_pass: password,
@@ -69,6 +71,7 @@ export default function User() {
             setCnic("");
             setDistrict("");
             setPassword("");
+            setGenderRadio("");
 
             navigate("/users");
           } catch (err) {
@@ -159,6 +162,31 @@ export default function User() {
                     </Option>
                   ))}
                 </Select>
+              </div>
+              <div className="userUpdateItem">
+                <label>Gender</label>
+                <label className="containerRadio">
+                  Male
+                  <input
+                    type="radio"
+                    checked={genderRadio == "Male" ? true : false}
+                    name="radio"
+                    value="Male"
+                    onChange={(e) => setGenderRadio(e.target.value)}
+                  />
+                  <span className="checkmark"></span>
+                </label>
+                <label className="containerRadio">
+                  Female
+                  <input
+                    type="radio"
+                    checked={genderRadio == "Female" ? true : false}
+                    name="radio"
+                    value="Female"
+                    onChange={(e) => setGenderRadio(e.target.value)}
+                  />
+                  <span className="checkmark"></span>
+                </label>
               </div>
               <div className="userUpdateItem">
                 <label>

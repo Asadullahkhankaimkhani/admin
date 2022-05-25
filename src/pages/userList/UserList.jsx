@@ -44,7 +44,9 @@ export default function UserList() {
           <>
             <EditIcon
               className="userListEditIcon"
-              onClick={() => navigate("/edituser/" + params.row._id)}
+              onClick={() => {
+                navigate("/edituser/" + params.row._id);
+              }}
             />
             <Visibility
               className="userListView"

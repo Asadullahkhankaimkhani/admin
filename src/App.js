@@ -15,6 +15,7 @@ import Topbar from "./components/topbar/Topbar";
 import { AuthContext } from "./context/authContext/AuthContext";
 import styled from "styled-components";
 import { AccountBox } from "./components/accountBox";
+import Comments from "./pages/comments/Comments";
 
 const AppContainer = styled.div`
   width: 100%;
@@ -56,6 +57,7 @@ function App() {
               <Route path="/badges" element={<BadgesList />} />
               <Route path="/updatebadge/:badgeId" element={<UpdateBadge />} />
               <Route path="/newbadge" element={<NewBadge />} />
+              <Route path="/comments" element={<Comments />} />
             </>
           )}
           <Route
