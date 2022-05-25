@@ -2,7 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { DataGrid } from "@material-ui/data-grid";
-import { ConsoleSqlOutlined, LoadingOutlined } from "@ant-design/icons";
+import { LoadingOutlined } from "@ant-design/icons";
 import { Visibility, Cancel } from "@material-ui/icons";
 import Link from "@material-ui/core/Link";
 import { useNavigate } from "react-router-dom";
@@ -16,13 +16,16 @@ export default function Comments() {
 
   const navigate = useNavigate();
 
+  useEffect(() => {
+    getComments();
+  }, []);
+
   const toggleModal = () => {
     setToggleState(!toggleState);
   };
 
   const getCurrentComment = (x) => {
     setCurrentComment(x);
-    console.log(x);
   };
 
   if (toggleState) {
@@ -33,7 +36,7 @@ export default function Comments() {
 
   const getComments = async () => {
     const { data } = await axios.get(
-      `${process.env.REACT_APP_BACKEND_URL}/comment`,
+      process.env.REACT_APP_BACKEND_URL + "/comment",
       {
         headers: {
           Authorization:
@@ -41,16 +44,13 @@ export default function Comments() {
         },
       }
     );
+    console.log(data);
     setComment(data.reverse());
   };
 
   const navigateToUser = () => {
     navigate("/user/" + currentComment.user._id);
   };
-
-  useEffect(() => {
-    getComments();
-  }, []);
 
   const columns = [
     {
@@ -123,9 +123,24 @@ export default function Comments() {
       </div>
     );
   }
-
+  // console.log(comment);
   return (
     <div className="userList">
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "space-between",
+        }}
+      >
+        <button
+          className="createUser"
+          style={{ marginLeft: "10px" }}
+          onClick={() => navigate(-1)}
+        >
+          Back
+        </button>
+      </div>
       {comment.length > 0 ? (
         <DataGrid
           rows={comment}

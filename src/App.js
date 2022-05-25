@@ -16,6 +16,7 @@ import { AuthContext } from "./context/authContext/AuthContext";
 import styled from "styled-components";
 import { AccountBox } from "./components/accountBox";
 import Comments from "./pages/comments/Comments";
+import AboutUs from "./pages/aboutUs/AboutUs";
 
 const AppContainer = styled.div`
   width: 100%;
@@ -58,6 +59,7 @@ function App() {
               <Route path="/updatebadge/:badgeId" element={<UpdateBadge />} />
               <Route path="/newbadge" element={<NewBadge />} />
               <Route path="/comments" element={<Comments />} />
+              <Route path="/aboutus" element={<AboutUs />} />
             </>
           )}
           <Route

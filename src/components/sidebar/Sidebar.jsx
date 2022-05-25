@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import StarsIcon from "@material-ui/icons/Stars";
 import CommentOutlinedIcon from "@material-ui/icons/CommentOutlined";
+import InfoOutlinedIcon from "@material-ui/icons/InfoOutlined";
 const quickMenu = [
   { title: "Users" },
   { title: "Create Users" },
@@ -69,6 +70,7 @@ export default function Sidebar() {
                 Badges
               </li>
             </Link>
+
             <Link to="/comments" className="link">
               <li
                 className={`sidebarListItem ${active === 4 ? "active" : ""}`}
@@ -82,6 +84,21 @@ export default function Sidebar() {
               >
                 <CommentOutlinedIcon className="sidebarIcon" />
                 Comments
+              </li>
+            </Link>
+            <Link to="/aboutus" className="link">
+              <li
+                className={`sidebarListItem ${active === 5 ? "active" : ""}`}
+                onClick={() => {
+                  if (active === 5) {
+                    setActive();
+                  } else {
+                    setActive(5);
+                  }
+                }}
+              >
+                <InfoOutlinedIcon className="sidebarIcon" />
+                About Us
               </li>
             </Link>
           </ul>
